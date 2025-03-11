@@ -4,11 +4,11 @@ const title = document.getElementById("slide-title");
 const description = document.getElementById("slide-description");
 
 const images = [
-  "/assets/images/slider/image1.jpeg",
-  "/assets/images/slider/image2.png",
-  "/assets/images/slider/image3.jpeg",
-  "/assets/images/slider/image4.jpeg",
-  "/assets/images/slider/image5.png",
+  "./assets/images/slider/image1.jpeg",
+  "./assets/images/slider/image2.png",
+  "./assets/images/slider/image3.jpeg",
+  "./assets/images/slider/image4.jpeg",
+  "./assets/images/slider/image5.png",
 ];
 
 const contents = [
@@ -86,9 +86,9 @@ const tabItems = document.querySelectorAll(".tab-item");
 tabItems.forEach((tab, index) => {
   tab.addEventListener("click", () => {
     tabItems.forEach((item) =>
-      item.classList.remove("scale-x-[1.235]", "tab-active")
+      item.classList.remove("scale-x-[1.125]", "tab-active")
     );
-    tab.classList.add("scale-x-[1.235]", "tab-active");
+    tab.classList.add("scale-x-[1.125]", "tab-active");
     changeBackground(`/assets/images/tabs/tab${index + 1}.png`);
   });
 });
