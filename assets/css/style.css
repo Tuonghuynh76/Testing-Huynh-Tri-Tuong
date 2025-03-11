@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "BigShouldersStencil";
+  src: url("../fonts/BigShouldersStencilText-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BigShouldersText";
+  src: url("../fonts/BigShouldersText-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpaceGroteskBold";
+  src: url("../fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpaceGroteskRegular";
+  src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BigShouldersDisplay";
+  src: url("../fonts/big-shoulders-display.bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #191919;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  caret-color: transparent;
+}
+
+h1 {
+  font-family: BigShouldersStencil, sans-serif;
+}
+
+h3,
+h2 {
+  font-family: BigShouldersText, sans-serif;
+}
+
+p {
+  font-family: SpaceGroteskRegular, sans-serif;
+}
+
+input,
+.step-1 button > p,
+.step-2 button > p,
+.step-3 button > p,
+.btn-find {
+  font-family: SpaceGroteskBold, sans-serif;
+}
+
+.text-reserve {
+  font-family: BigShouldersDisplay, sans-serif;
+}
+
+.heading span:first-child {
+  background: linear-gradient(90deg, #009fe3 70%, #ffffff 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-mask-image: linear-gradient(to right, #fff, #fff);
+}
+.heading span:nth-child(2) {
+  background: linear-gradient(to right, #009fe3, #fff);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-mask-image: linear-gradient(to right, #fff, #fff);
+}
+.heading span:nth-child(3) {
+  background: linear-gradient(to right, #fff, #e30613);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-mask-image: linear-gradient(to right, #fff, #fff);
+}
+
+.tab-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, #d9d9d9 60%);
+}
+
+.tab-item.tab-active h3,
+.tab-item:hover h3 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.tab-item.tab-active::after,
+.tab-item:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, #292929 60%);
+}
+
+.img1 {
+  -webkit-mask-image: url("/assets/images/svg/shape.svg");
+  mask-image: url("/assets/images/svg/shape.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  overflow: hidden;
+}
+
+.img1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+  background-image: linear-gradient(
+      338.19deg,
+      #292929 7.74%,
+      rgba(41, 41, 41, 0) 67.2%
+    ),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-custom {
+  position: relative;
+  background: url("/assets/images/grift/background.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #e30613;
+}
+
+.bg-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(rgba(227, 6, 19, 0.8), rgba(227, 6, 19, 0.8)),
+    url("/assets/images/grift/background.png");
+  mix-blend-mode: screen;
+}
+
+.bg-blur1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(50% 50% at 50% 50%, #e30613 0%, #009fe3 100%);
+  filter: blur(60px);
+  border-radius: 50px;
+}
+
+.bg-blur2 {
+  width: 168px;
+  height: 168px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 159, 227, 0.5) 0%,
+    rgba(227, 6, 19, 0.5) 100%
+  );
+  filter: blur(100px);
+  border-radius: 50px;
+}
+
+.dot.active p {
+  background-color: #d9d9d9;
+}
+
+.fade-out {
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.img1.face-out {
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
